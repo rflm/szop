@@ -1,0 +1,16 @@
+<header class="container mx-auto my-8">
+  <nav class="flex justify-between">
+    <%= link_to "Szop", root_path, class: "font-bold" %>
+
+    <% if authenticated? %>
+      <div>
+        <%= link_to "Sign Out", session_path(Current.session), data: { turbo_method: :delete } %>
+      </div>
+    <% else %>
+    <div>
+        <%= link_to "Sign In", new_session_path, class: 'mr-5' %>
+        <%= link_to "Sign Up", new_user_path %>
+      </div>
+    <% end %>
+  </nav>
+</header>

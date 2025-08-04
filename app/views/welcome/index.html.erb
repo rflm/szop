@@ -1,3 +1,9 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<% if authenticated? %>
+  <h1 class="text-3xl font-bold">
+    <%= "Logged in as #{Current.user.email_address}" %>
+  </h1>
+<% else %>
+  <h1 class="text-3xl font-bold">
+    Log in to continue
+  </h1>
+<% end %>
